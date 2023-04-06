@@ -1,27 +1,43 @@
 # pdb_utils
-Only Python3 is supported. If Python2 is used, a SyntaxError will be raised.
-
-Use --help flag to see each program usage.
-
+## Installation
+1. Activate a virtual environment which you want to install pdb_utils into.
+```sh
+conda activate some-env
 ```
-python3 <path to the pdb_utils directory>/<name of program> --help
+
+2. Clone this repository
+```sh
+git clone https://github.com/kttn8769/pdb_utils.git
+cd pdb_utils
+```
+
+3. Run dependency check
+```sh
+python ./check_dependencies.py
+```
+
+* If missing/conflicting dependencies are found, prepare the required dependencies with conda.
+
+4. Install pdb_utils
+```sh
+pip install .
 ```
 
 ---
 
 # Examples
-## pu_pdb_edit.py
+* To see the help document of each program, invoke the program with --help flag. e.g.  `pu_edit_pdb --help`
+
+## pu_pdb_edit
 * Replace HSD to HIS
 
 ```
-python3 <path to the pdb_utils directory>/pu_edit_pdb.py --i in.pdb --o out.pdb --procs hsd2his
+pu_edit_pdb --i in.pdb --o out.pdb --procs hsd2his
 ```
 
-## pu_find_missing_sidechains.py
+## pu_find_missing_sidechains
 * Find sidechain-missing residues in a PDB file.
-* Requires
-  * Biopython
 
 ```
-python3 <path to the pdb_utils directory>/pu_find_missing_sidechains.py --i in.pdb --chain A
+pu_find_missing_sidechains --i in.pdb --chain A
 ```
